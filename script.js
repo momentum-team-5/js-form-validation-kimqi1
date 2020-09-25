@@ -7,12 +7,16 @@ form.addEventListener('submit', validateForm)
 function validateForm (event) {
     event.preventDefault()
     validateYear()
+    numberOfDays()
+    cvv3()
+
+    formIsValid = true  
 
     if (formIsVaild) {
         fetch('https://momentum-server.glitch.me/parking', {
             method: 'POST',
             headers: { 'Conten-Type': 'application/json'},
-            body: JSON.stringify({ formData: {name:'car-year'}})
+            body: JSON.stringify({ formData: {name:car-year}})
         })
         .then(res => res.json())
         .then(data => console.log (data))
@@ -32,9 +36,20 @@ const yearInput = document.querySelector('#car-year')
 // * Number of days must be between 1 and 30.
 function numberOfDays (){
     const daysInput = document.querySelector('#days')
-    if(daysInput.value >= 1 ){
+    if(daysInput.value > 1 ){
         console.log ('Number of days is valid')
     } else {
+        if (daysInput.value < 30) {
         console.log ('Number of days must be greater than 0 and less than 30')
+        }
+    }
+}
+//CVV must be a three-digit number
+function cvv3 () {
+    const cvvInput = document.querySelector('#cvv')
+    if(cvvInput.value > 3){
+        console.log ('cvv must be 3 digits') 
+    } else {
+        console.log ('cvv is valid)')
     }
 }
