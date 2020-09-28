@@ -6,9 +6,9 @@ form.addEventListener('submit', validateForm)
 
 function validateForm (event) {
     event.preventDefault()
-    // validateYear()
+    validateYear()
     numberOfDays()
-    // cvv3()
+    cvv3()
 
     formIsValid = true  
 
@@ -49,7 +49,7 @@ function numberOfDays (){
 //CVV must be a three-digit number
 function cvv3 () {
     const cvvInput = document.querySelector('#cvv')
-    if(cvvInput.value > 3){
+    if(cvvInput.value >=3){
         console.log ('cvv must be 3 digits') 
     } else {
         console.log ('cvv is valid)')
