@@ -6,9 +6,9 @@ form.addEventListener('submit', validateForm)
 
 function validateForm (event) {
     event.preventDefault()
-    validateYear()
+    // validateYear()
     numberOfDays()
-    cvv3()
+    // cvv3()
 
     formIsValid = true  
 
@@ -30,20 +30,22 @@ const yearInput = document.querySelector('#car-year')
         console.log ('year is valid')
     } else {
         console.log('year is invaild')
+
     }
 }
 
 // * Number of days must be between 1 and 30.
 function numberOfDays (){
-    const daysInput = document.querySelector('#days')
-    if(daysInput.value > 1 ){
+    let daysInput = document.querySelector('#days')
+    daysInput = parseInt(daysInput.value)
+    if((daysInput >=1) && (daysInput <=30)) {
         console.log ('Number of days is valid')
     } else {
-        if (daysInput.value < 30) {
+       
         console.log ('Number of days must be greater than 0 and less than 30')
         }
     }
-}
+
 //CVV must be a three-digit number
 function cvv3 () {
     const cvvInput = document.querySelector('#cvv')

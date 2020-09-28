@@ -27,7 +27,7 @@
         </div>
         <div class="input-field" id="days-field">
           <label for="days">Number of days</label>
-          <input id="days" type="number"required>
+          <input id="days" placeholder="Choose between 1-30 days" pattern="[1-30]"title="Number of days must be a number between 1-30" type="text"required>
         </div>
         <div class="input-field" id="credit-card-field">
           <label for="credit-card">Credit Card</label>
@@ -37,7 +37,7 @@
           <div class="col">
             <div class="input-field" id="cvv-field">
               <label for="cvv">CVV</label>
-              <input id="cvv" type="number" required maxlength="3">
+              <input id="cvv" type="text" placeholder="###" required maxlength="3" pattern="[0-9]{3}" title="Please enter a 3 digit number">
             </div>
           </div>
           <div class="col">
